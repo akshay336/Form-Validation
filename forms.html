@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>HTML FORMS</title>
+
+    <head>
+        <link rel="stylesheet"
+            href="jquery_form_validation/jquery/jQuery-Validation-Engine-master/css/validationEngine.jquery.css"
+            type="text/css" />
+        <link rel="stylesheet" href="jquery_form_validation/jquery/jQuery-Validation-Engine-master/css/template.css"
+            type="text/css" />
+        <script src="jquery_form_validation/jquery/jQuery-Validation-Engine-master/js/jquery-1.8.2.min.js"
+            type="text/javascript">
+            </script>
+        <script
+            src="jquery_form_validation/jquery/jQuery-Validation-Engine-master/js/languages/jquery.validationEngine-en.js"
+            type="text/javascript" charset="utf-8">
+            </script>
+        <script src="jquery_form_validation/jquery/jQuery-Validation-Engine-master/js/jquery.validationEngine.js"
+            type="text/javascript" charset="utf-8">
+            </script>
+        <script>
+            jQuery(document).ready(function () {
+                jQuery("#formID2").validationEngine('attach', {
+                    onValidationComplete: function (form, status) {
+                        alert("The form status is: " + status + ", it will never submit");
+                    }
+                })
+            });
+        </script>
+
+    </head>
+
+<body>
+    <div class="container">
+        <div class="row" table-responsive>
+            <div>
+
+
+                <form method="post" id="formID2" class="form-inline">
+                    <div class="form-group">
+                    <label>
+                        Name:
+                    </label>
+                    <input type="text" name="fld_student_name" id="fld_student_name" placeholder="Enter your name"
+                        pattern="[a-zA-Z\s]+" class="validate[required,custom[onlyLetterSp]] text-input"><br><br>
+                        </div>
+
+                    <label>
+                        Email:
+                    </label>
+                    <input type="email" name="fld_student_email" id="fld_student_email" placeholder="Enter Your Email"
+                        class="validate[required,custom[email]] text-input"><br><br>
+
+                    <label>
+                        Mobile Nunber:
+                    </label>
+                    <input type="text" name="fld_student_mobile" id="fld_student_mobile"
+                        placeholder="Enter your mobile Number"
+                        class="validate[required,custom[phone]] text-input"><br><br>
+
+                    <label>
+                        Password:
+                    </label>
+                    <input type="password" name="fld_student_password" id="fld_student_password"
+                        placeholder="Enter your password" class="validate[required] text-input"><br><br>
+
+                    <label>
+                        Date:
+                    </label>
+                    <input type="date" name="fld_student_birth date" id="fld_student_birth_date"
+                        placeholder="Enter Your Birth date" class="validate[required] text-input"><br><br>
+
+                    <label>
+                        Time:
+                    </label>
+                    <input type="time" name="fld_student_Time" id="fld_student_Time" placeholder="Enter Time"><br><br>
+
+                    <label>
+                        Photo:
+                    </label>
+                    <input type="file" name="fld_student_file" id="fld_student_file"
+                        placeholder="Select the file"><br><br>
+
+                    <label>
+                        Address:
+                    </label>
+                    <textarea name="fld_student_address" class="validate[required] text-input" id="fld_student_address"
+                        placeholder="Enter Your Address" rows="5" rocols="5"></textarea><br><br>
+
+
+                    <label>City :</label>
+                    <select name="city" class="validate[required]">
+                        <option value="">Select City</option>
+                        <option value="Nashik">Nashik</option>
+                        <option value="Pune">Pune</option>
+                        <option value="Mumbai">Mumbai</option>
+                    </select> <br><br>
+
+                    <label>Gender :</label>
+                    <input type="radio" name="gender" value="Male" class="validate[required] radio">Male
+                    <input type="radio" name="gender" value="Female" class="validate[required] radio">Female
+                    <br><br>
+
+
+                    <label>Language :</label>
+                    <input type="checkbox" name="lang[]" value="Marathi"
+                        class="validate[minCheckbox[2]] checkbox">Marathi
+                    <input type="checkbox" name="lang[]" value="English"
+                        class="validate[minCheckbox[2]] checkbox">English
+                    <input type="checkbox" name="lang[]" value="Hindi" class="validate[minCheckbox[2]] checkbox">Hindi
+                    <br><br>
+
+                    <button type="submit" name="submit">SUBMIT</button>
+                    <button type="reset" name="reset">RESET</button>
+                    <a href="table.html"><button type="button" name="link">Table</button></a>
+                </form>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>
